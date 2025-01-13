@@ -1,0 +1,480 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Chat App</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="" />
+<meta name="keywords" content="" />
+<meta content="Bizupon" name="author" />
+<!-- favicon -->
+<link rel="shortcut icon" href="images/favicon.png" id="tabIcon">
+<!-- css -->
+<link rel="stylesheet" href="css/boxicons.css" type="text/css" />
+<link rel="stylesheet" href="css/chat.css" type="text/css" />
+
+</head>
+
+<body>
+
+<div id="loader">
+    <svg class="spinner-container" width="65px" height="65px" viewBox="0 0 52 52">
+        <circle class="path" cx="26px" cy="26px" r="20px" fill="none" stroke-width="4px" />
+    </svg>
+</div>
+
+<div id="chat_layout_wrap">
+    <!--- left sidebar --->    
+    <div class="chat_left_sidebar">
+        <div class="user_profile_block">
+            <div class="sidebar_header">
+                <div class="profile_title">
+                    <i class="bx bx-arrow-back"></i>
+                    <h3>Profile</h3>
+                </div>
+            </div> 
+            <div class="avatar-upload">
+                <div class="avatar-edit">
+                    <input type='file' id="imageUpload" accept=".png, .jpg, .jpeg" />
+                    <label for="imageUpload"></label>
+                </div>
+                <div class="avatar-preview">
+                    <div id="imagePreview" style="background-image: url('images/avatar4.png');">
+                    </div>
+                </div>
+            </div>
+            <form class="profile_form">  
+                <div class="input_box">
+                    <i class="bx bxs-user"></i>
+                    <div class="form_group">
+                        <label>Name</label>
+                        <input type="text" id="name" name="name" value="Vivek Shukla">
+                    </div>
+                    <div class="edit_profile">
+                        <i class="bx bxs-pencil"></i>
+                    </div>
+                </div>
+                <div class="input_box">
+                    <i class="bx bxs-phone"></i>
+                    <div class="form_group">
+                        <label>Phone</label>
+                        <input type="text" id="phone" name="phone" value="96325 87410">
+                    </div>
+                    <div class="edit_profile">
+                        <i class="bx bxs-pencil"></i>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="sidebar">
+            <div class="sidebar_header">
+                <div class="header_logo">
+                    <img src="images/logo.png" alt="">
+                </div>
+                <div class="sidebar_search">
+                    <div class="search_group">
+                        <input type="text" id="search" name="search" placeholder="Search...">
+                        <i class="bx bx-search"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="chatroom_list">
+                <ul class="user_list">
+                    <li class="user_item">
+                        <div class="avatar">
+                            <img src="images/avatar1.png" alt="">
+                        </div>
+                        <div class="avatar_content">
+                            <div class="title">
+                                <h4>Shivam Panday</h4>
+                                <h6 class="time">02:28</h6>
+                            </div>
+                            <div class="description">
+                                <p>Our app will then translate your English word, phrase, or sentence into Hindi.</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="user_item">
+                        <div class="avatar">
+                            <img src="images/avatar2.jpg" alt="">
+                        </div>
+                        <div class="avatar_content">
+                            <div class="title">
+                                <h4>Mariya Cena</h4>
+                                <h6 class="time">10:15</h6>
+                            </div>
+                            <div class="description">
+                                <p>Our app will then translate your English word, phrase, or sentence into Hindi.</p>
+                                <div class="badge">9</div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="user_item">
+                        <div class="avatar">
+                            <img src="images/avatar3.jpg" alt="">
+                        </div>
+                        <div class="avatar_content">
+                            <div class="title">
+                                <h4>Savannah Nguyen</h4>
+                                <h6 class="time">11/11/2024</h6>
+                            </div>
+                            <div class="description">
+                                <p>Our app will then translate your English word, phrase, or sentence into Hindi.</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="user_item active">
+                        <div class="avatar">
+                            <img src="images/avatar4.png" alt="">
+                        </div>
+                        <div class="avatar_content">
+                            <div class="title">
+                                <h4>Vivek Shukla</h4>
+                                <h6 class="time">02:19</h6>
+                            </div>
+                            <div class="description">
+                                <p>Our app will then translate your English word, phrase, or sentence into Hindi.</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="user_item">
+                        <div class="avatar">
+                            <img src="images/avatar1.png" alt="">
+                        </div>
+                        <div class="avatar_content">
+                            <div class="title">
+                                <h4>Shivam Panday</h4>
+                                <h6 class="time">02:28</h6>
+                            </div>
+                            <div class="description">
+                                <p>Our app will then translate your English word, phrase, or sentence into Hindi.</p>
+                                <div class="badge">25</div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="user_item">
+                        <div class="avatar">
+                            <img src="images/avatar2.jpg" alt="">
+                        </div>
+                        <div class="avatar_content">
+                            <div class="title">
+                                <h4>Mariya Cena</h4>
+                                <h6 class="time">Yesterday</h6>
+                            </div>
+                            <div class="description">
+                                <p>Our app will then translate your English word, phrase, or sentence into Hindi.</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="user_item">
+                        <div class="avatar">
+                            <img src="images/avatar3.jpg" alt="">
+                        </div>
+                        <div class="avatar_content">
+                            <div class="title">
+                                <h4>Savannah Nguyen</h4>
+                                <h6 class="time">11:15</h6>
+                            </div>
+                            <div class="description">
+                                <p>Our app will then translate your English word, phrase, or sentence into Hindi.</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="user_item">
+                        <div class="avatar">
+                            <img src="images/avatar4.png" alt="">
+                        </div>
+                        <div class="avatar_content">
+                            <div class="title">
+                                <h4>Vivek Shukla</h4>
+                                <h6 class="time">02:19</h6>
+                            </div>
+                            <div class="description">
+                                <p>Our app will then translate your English word, phrase, or sentence into Hindi.</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="user_item">
+                        <div class="avatar">
+                            <img src="images/avatar1.png" alt="">
+                        </div>
+                        <div class="avatar_content">
+                            <div class="title">
+                                <h4>Shivam Panday</h4>
+                                <h6 class="time">02:28</h6>
+                            </div>
+                            <div class="description">
+                                <p>Our app will then translate your English word, phrase, or sentence into Hindi.</p>
+                                <div class="badge">25</div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="user_item">
+                        <div class="avatar">
+                            <img src="images/avatar2.jpg" alt="">
+                        </div>
+                        <div class="avatar_content">
+                            <div class="title">
+                                <h4>Mariya Cena</h4>
+                                <h6 class="time">10:15</h6>
+                            </div>
+                            <div class="description">
+                                <p>Our app will then translate your English word, phrase, or sentence into Hindi.</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="user_item">
+                        <div class="avatar">
+                            <img src="images/avatar3.jpg" alt="">
+                        </div>
+                        <div class="avatar_content">
+                            <div class="title">
+                                <h4>Savannah Nguyen</h4>
+                                <h6 class="time">Yesterday</h6>
+                            </div>
+                            <div class="description">
+                                <p>Our app will then translate your English word, phrase, or sentence into Hindi.</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="user_item">
+                        <div class="avatar">
+                            <img src="images/avatar4.png" alt="">
+                        </div>
+                        <div class="avatar_content">
+                            <div class="title">
+                                <h4>The House of Abhinandan Lodha</h4>
+                                <h6 class="time">02:19</h6>
+                            </div>
+                            <div class="description">
+                                <p>Our app will then translate your English word, phrase, or sentence into Hindi.</p>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="sidebar_footer">
+                <button type="button" class="active" tooltip="Chat"><i class="bx bxs-chat"></i></button>
+                <button type="button" class="profile" tooltip="User Profile"><i class="bx bxs-user"></i></button>
+                <a href="login.html" tooltip="Log out"><i class="bx bxs-log-out-circle"></i></a>
+            </div>
+        </div>
+    </div>
+    <!--- user chat ---> 
+    <div class="user_chat_area">
+        <div class="user_topbar">
+            <div class="avatar">
+                <img src="images/avatar4.png" alt="">
+            </div>
+            <div class="avatar_content">
+                <div class="title">
+                    <h4>Vivek Shukla</h4>
+                </div>
+                <div class="description">
+                    <p>Online</p>
+                </div>
+            </div>
+            <div class="chat_search">
+                <input type="text"/>    
+                <div class="search_close">
+                   <span class="front"></span>
+                   <span class="back"></span>
+                </div> 
+            </div>
+        </div>
+        <div class="chat_msg_area">
+            <div class="chat_content_block">
+                <div class="chat_list_msg">
+                    <div class="message_date">
+                        <p>11/11/2024</p>
+                    </div>
+                    <div class="message_column">
+                        <div class="message_in">
+                            <div class="message_block">
+                                <p>sdjflkdsjfld jsdlfjd jsdlfjdsjf jsdlfjdjf jdslkfjd sdjflkdsjfld jsdlfjd jsdlfjdsjf jsdlfjdjf jdslkfjd sdjflkdsjfld jsdlfjd jsdlfjdsjf jsdlfjdjf jdslkfjd sdjflkdsjfld jsdlfjd jsdlfjdsjf jsdlfjdjf jdslkfjdsdjflkdsjfld jsdlfjd jsdlfjdsjf jsdlfjdjf jdslkfjdsdjflkdsjfld jsdlfjd jsdlfjdsjf jsdlfjdjf jdslkfjd</p>
+                                <h6 class="msg_time">10:58</h6>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="message_column">
+                        <div class="message_in message_out">
+                            <div class="message_block">
+                                <p>sdjflkdsjfld jsdlfjd jsdlfjdsjf jsdlfjdjf jdslkfjd sdjflkdsjfld jsdlfjd jsdlfjdsjf jsdlfjdjf jdslkfjd sdjflkdsjfld jsdlfjd jsdlfjdsjf jsdlfjdjf jdslkfjd sdjflkdsjfld jsdlfjd jsdlfjdsjf jsdlfjdjf jdslkfjdsdjflkdsjfld jsdlfjd jsdlfjdsjf jsdlfjdjf jdslkfjdsdjflkdsjfld jsdlfjd jsdlfjdsjf jsdlfjdjf jdslkfjd</p>
+                                <h6 class="msg_time">10:58 <i class="bx bx-check-double"></i></h6>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="message_column">
+                        <div class="message_in">
+                            <div class="message_block">
+                                <p>sdjflkdsjfld jsdlfjd jsdlfjdsjf jsdlfjdjf jdslkfjd sdjflkdsjfld jsdlfjd jsdlfjdsjf jsdlfjdjf jdslkfjd sdjflkdsjfld jsdlfjd jsdlfjdsjf jsdlfjdjf jdslkfjd sdjflkdsjfld jsdlfjd jsdlfjdsjf jsdlfjdjf jdslkfjdsdjflkdsjfld jsdlfjd jsdlfjdsjf jsdlfjdjf jdslkfjdsdjflkdsjfld jsdlfjd jsdlfjdsjf jsdlfjdjf jdslkfjd</p>
+                                <h6 class="msg_time">10:58</h6>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="message_column">
+                        <div class="message_in message_out">
+                            <div class="message_block">
+                                <p>sdjflkdsjfld jsdlfjd jsdlfjdsjf jsdlfjdjf jdslkfjd sdjflkdsjfld jsdlfjd jsdlfjdsjf </p>
+                                <h6 class="msg_time">10:58 <i class="bx bx-check-double"></i></h6>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="message_column">
+                        <div class="message_in">
+                            <div class="message_block">
+                                <p>sdjflkdsjfld jsdlfjd jsdlfjdsjf jsdlfjdjf </p>
+                                <h6 class="msg_time">10:58</h6>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="message_column">
+                        <div class="message_in message_out">
+                            <div class="message_block">
+                                <p>sdjflkdsjfld jsdlfjd jsdlfjdsjf jsdlfjdjf jdslkfjd sdjflkdsjfld </p>
+                                <h6 class="msg_time">10:58 <i class="bx bx-check-double"></i></h6>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="message_column">
+                        <div class="message_in">
+                            <div class="message_block">
+                                <p>sdjflkdsjfld jsdlfjd jsdlfjdsjf jsdlfjdjf </p>
+                                <h6 class="msg_time">10:58</h6>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="message_column">
+                        <div class="message_in message_out">
+                            <div class="message_block">
+                                <p>sdjflkdsjfld jsdlfjd jsdlfjdsjf jsdlfjdjf jdslkfjd sdjflkdsjfld </p>
+                                <h6 class="msg_time">10:58 <i class="bx bx-check-double"></i></h6>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="message_column">
+                        <div class="message_in">
+                            <div class="message_block">
+                                <p>sdjflkdsjfld jsdlfjd jsdlfjdsjf jsdlfjdjf </p>
+                                <h6 class="msg_time">10:58</h6>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="message_column">
+                        <div class="message_in message_out">
+                            <div class="message_block">
+                                <p>sdjflkdsjfld jsdlfjd jsdlfjdsjf jsdlfjdjf jdslkfjd sdjflkdsjfld </p>
+                                <h6 class="msg_time">10:58 <i class="bx bx-check-double"></i></h6>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="message_column">
+                        <div class="message_in">
+                            <div class="message_block">
+                                <p>sdjflkdsjfld jsdlfjd jsdlfjdsjf jsdlfjdjf </p>
+                                <h6 class="msg_time">10:58</h6>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="message_column">
+                        <div class="message_in message_out">
+                            <div class="message_block">
+                                <p>sdjflkdsjfld jsdlfjd jsdlfjdsjf jsdlfjdjf jdslkfjd sdjflkdsjfld </p>
+                                <h6 class="msg_time">10:58 <i class="bx bx-check-double"></i></h6>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="message_column">
+                        <div class="message_in">
+                            <div class="message_block">
+                                <p>sdjflkdsjfld jsdlfjd jsdlfjdsjf jsdlfjdjf </p>
+                                <h6 class="msg_time">10:58 </h6>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="message_column">
+                        <div class="message_in message_out">
+                            <div class="message_block">
+                                <p>sdjflkdsjfld jsdlfjd jsdlfjdsjf jsdlfjdjf jdslkfjd sdjflkdsjfld </p>
+                                <h6 class="msg_time">10:58 <i class="bx bx-check-double"></i></h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="message_textarea">
+            <div class="attachment">
+                <i class="bx bx-paperclip"></i>
+            </div>
+            <textarea id="textarea" class="form-control" name="textarea" placeholder="Type a message" contenteditable></textarea>
+            <button type="button" class="btn-theme-rounded"><i class="bx bxs-send"></i></button>
+        </div>
+    </div>
+</div>  
+
+<script src="js/jquery-3.7.1.min.js"></script>
+<script>
+    /*-- change profile image --*/
+    function readURL(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+            reader.onload = function(e) {
+                $('#imagePreview').css('background-image', 'url('+e.target.result +')');
+                $('#imagePreview').hide();
+                $('#imagePreview').fadeIn(650);
+            }
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+    $("#imageUpload").change(function() {
+        readURL(this);
+    });
+
+    /*-- page loading --*/
+    $(window).on('load',function(){
+        setTimeout(function(){ 
+            $('#loader').fadeOut('slow');
+        },1000);
+    });
+
+    /*-- profile show hide --*/
+    $(document).ready(function(){
+        $(".profile").click(function(){
+            $(".user_profile_block").addClass('show');
+            $(".sidebar").addClass('hide');
+        });
+        $(".bx-arrow-back").click(function(){
+            $(".user_profile_block").addClass('hide');
+            $(".user_profile_block").removeClass('show');
+            $(".sidebar").addClass('show');
+            $(".sidebar").removeClass('hide');
+        });
+    });
+
+
+    /*-- Dealing with Textarea Height --*/
+    const textarea = document.getElementById("textarea");
+
+    function setHeight(elem) {
+    const style = getComputedStyle(elem, null);
+    const verticalBorders = Math.round(parseFloat(style.borderTopWidth) + parseFloat(style.borderBottomWidth));
+    const maxHeight = parseFloat(style.maxHeight) || 200;
+    
+    elem.style.height = "auto";
+
+    const newHeight = elem.scrollHeight + verticalBorders;
+    
+    elem.style.overflowY = newHeight > maxHeight ? "auto" : "hidden";
+    elem.style.height = Math.min(newHeight, maxHeight) + "px";
+    }
+
+    textarea.addEventListener("input", (e) => {
+    setHeight(e.target);
+    });
+
+    setHeight(textarea);
+</script>
+
+</body>
+</html>
